@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/angular.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="myModule" ng-controller="myCtrl">
+        <input type="number" ng-model="val1">
+        <input type="number" ng-model="val2">
+        <button ng-click="sum(val1, val2)" class="btn btn-primary">Add Values</button>
+        <h1>{{ answer }}</h1>
+    </div>
+    <script>
+        var myApp = angular.module("myModule", [])
+        myApp.controller("myCtrl", function($scope){
+            $scope.sum = function(val1, val2){
+                // $scope.val1 = 10
+                // $scope.val2 = 10
+                $scope.answer = $scope.val1 + $scope.val2 
+                return answer;
+            } 
+        })
+
+    </script>
+</body>
+</html>
