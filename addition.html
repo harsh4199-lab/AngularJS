@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/angular.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="module1" ng-controller="controller">
+        <form>
+            <div class="form-group">
+                <label for="val1" class="control-label">Value 1</label>
+                <input type="number" ng-model="val1">
+            </div>
+            <div class="form-group">
+                <label for="val2" class="control-label">Value 2</label>
+                <input type="number" ng-model="val2">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" ng-click="sum(val1, val2)">Add values</button>
+            </div>
+            <h1>The answer is: {{ answer }}</h1>
+        </form>
+    </div>
+    <script>
+        var myApp = angular.module("module1", [])
+        myApp.controller("controller", function($scope){
+            $scope.sum = function(val1, val2){
+                $scope.val1 = val1
+                $scope.val2 = val2
+                $scope.answer = $scope.val1 + $scope.val2
+                return answer
+            }
+
+        })
+
+    </script>
+</body>
+</html>
